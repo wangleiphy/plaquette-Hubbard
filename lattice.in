@@ -1,0 +1,6 @@
+LATTICE_LIBRARY = "mylattices.xml"
+LATTICE = "plaquette lattice"
+L = 2
+W = 2
+BCx = "periodic"
+BCy = "periodic"
