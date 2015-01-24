@@ -6,8 +6,7 @@ W=2
 Nup = 3 
 Ndn = 3 
 t0 = 1.0
-t1 = 0.5 
-U = 2.0 
+U = 4.0 
 
 parms = []
 for t1 in [0.1, 0.5, 1.0]:
@@ -38,8 +37,9 @@ for t1 in [0.1, 0.5, 1.0]:
 input_file = pyalps.writeInputFiles('plaquette',parms)
 #res = pyalps.runApplication('sparsediag',input_file,writexml=False)
 
+resfolder = 'data/'
 for p in parms:
-    parmname = str(p['LATTICE']).replace(" ", "")+'L'+str(p['L'])+'_W'+str(p['W'])+'_Nup'+str(p['Nup_total'])+'_Ndn'+str(p['Ndown_total']) +'_t1'+str(p['t1']) +'_U'+str(p['U'])
+    parmname = resfolder + str(p['LATTICE']).replace(" ", "")+'L'+str(p['L'])+'_W'+str(p['W'])+'_Nup'+str(p['Nup_total'])+'_Ndn'+str(p['Ndown_total']) +'_t1'+str(p['t1']) +'_U'+str(p['U'])
     input_file = pyalps.writeInputFiles(parmname, [p])
     pyalps.runApplication('sparsediag',input_file) #,writexml=True)#,MPI=2)
 #    check_call(['bsub','-oo',input_file.replace('.in.xml','.log'),'-W','08:00','sparsediag',input_file])

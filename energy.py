@@ -10,7 +10,7 @@ if __name__=='__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-fileheader", default='plaquettelatticeL2_W2_Nup3_Ndn3', help="fileheader")
-    parser.add_argument("-dir", default='./', help="dir")
+    parser.add_argument("-dir", default='./data/', help="dir")
     args = parser.parse_args()
 
     resfiles = pyalps.getResultFiles(dirname= args.dir, prefix=args.fileheader)
